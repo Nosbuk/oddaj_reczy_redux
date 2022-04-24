@@ -1,0 +1,38 @@
+.sign {
+  width: 90%;
+  max-width: 384px;
+  margin: auto;
+  &__headline {
+    text-align: center;
+    font: normal normal normal 40px $font-base;
+  }
+  &__form {
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__wrapper {
+      background: nth($colors, 1);
+      margin: 20px 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 450px) {
+        margin: 20px 30px;
+      }
+    }
+    &__input {
+      &--text {
+        font: normal normal 600 24px $font-base;
+        letter-spacing: 0px;
+        color: nth($colors, 5);
+        border-bottom: solid 1px nth($colors, 5);
+        margin: 20px 0;
+      }
+    }
+    &__label {
+      font: normal normal 600 16px $font-base;
+      color: nth($colors, 5);
+    }
+  }
+}

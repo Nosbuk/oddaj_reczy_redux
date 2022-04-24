@@ -1,0 +1,44 @@
+.header {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../../assets/Home-Hero-Image.jpg);
+  background-position: -400px 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  @media (min-width: 1600px) {
+    background-position: -40% 100%;
+  }
+  @media (min-width: 2000px) {
+    background-position: calc(50% - 500px) 100%;
+  }
+
+  &__container {
+    @include container;
+    align-items: flex-end;
+  }
+
+  &__CTA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 30px;
+    padding-left: 150px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 100%);
+
+    &__headline {
+      text-align: center;
+      font: normal normal normal 38px/55px "Open Sans";
+      letter-spacing: -0.76px;
+      color: nth($colors, 5);
+      margin-bottom: 25px;
+    }
+  }
+  .buttons-row {
+    margin-top: 65px;
+  }
+}

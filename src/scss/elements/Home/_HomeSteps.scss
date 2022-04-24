@@ -1,0 +1,68 @@
+.steps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__header {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .decoration {
+      margin-top: 30px;
+    }
+    &__text {
+      text-align: center;
+      font: normal normal normal 38px $font-base;
+      color: nth($colors, 5);
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    background-color: nth($colors, 1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__container {
+    @include container;
+    max-width: 1000px;
+    padding: 30px 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__img {
+      width: 90px;
+    }
+    &__headline {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      font: normal normal normal 18px $font-base;
+      color: nth($colors, 5);
+      margin: 10px 0;
+      &::after {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 1px;
+        background: nth($colors, 5);
+        margin-top: 10px;
+      }
+    }
+    &__text {
+      text-align: center;
+      font: normal normal normal 16px $font-base;
+      color: nth($colors, 5);
+    }
+  }
+  .buttons-row {
+    padding: 40px 0;
+  }
+}

@@ -1,0 +1,35 @@
+.stats {
+  width: 100%;
+  padding: 30px;
+  background: transparent url("../../../assets/3-Columns-Background.png");
+  &__container {
+    @include container;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 340px;
+  }
+  &__number {
+    text-align: center;
+    font: normal normal 300 90px/122px $font-base;
+    letter-spacing: 0px;
+    color: nth(&colors, 2);
+  }
+  &__headline {
+    text-align: center;
+    font: normal normal normal 18px/30px $font-base;
+    letter-spacing: -0.36px;
+    color: nth($colors, 5);
+  }
+  &__text {
+    text-align: center;
+    font: normal normal 300 16px/18px $font-alt;
+    letter-spacing: -0.32px;
+    color: nth($colors, 5);
+  }
+}

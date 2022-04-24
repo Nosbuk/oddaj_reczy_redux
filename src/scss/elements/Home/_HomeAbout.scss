@@ -1,0 +1,44 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  background: nth($colors, 1);
+  &__container {
+    @include container;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__box {
+    .decoration {
+      margin: 20px 0;
+    }
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &__headline {
+      text-align: center;
+      font: normal normal normal 38px $font-base;
+      color: nth($colors, 5);
+    }
+    &__text {
+      text-align: center;
+      font: normal normal normal 30px/54px $font-base;
+      color: nth($colors, 5);
+      max-width: 656px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    &__signature {
+      position: absolute;
+      bottom: -100px;
+      width: 200px;
+    }
+  }
+  &__img {
+    max-width: 940px;
+    width: 50%;
+  }
+}
