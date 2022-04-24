@@ -8,7 +8,7 @@ export const Sign = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { currentUser, signup, login } = useAuth();
+  const { signup, login } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { pathname } = useLocation();

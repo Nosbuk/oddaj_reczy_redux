@@ -2,6 +2,12 @@
   width: 90%;
   max-width: 384px;
   margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .decoration {
+    margin: 20px 0;
+  }
   &__headline {
     text-align: center;
     font: normal normal normal 40px $font-base;
