@@ -33,6 +33,7 @@
   &__scroll {
     display: flex;
     &__link {
+      cursor: pointer;
       margin: 0 30px;
       font: normal normal normal 24px $font-base;
       color: #3c3c3c;

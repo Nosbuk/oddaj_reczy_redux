@@ -1,61 +1,75 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
-import { useAuth } from "../../hooks/useAuth";
+import { useUser } from "../../hooks/useUser";
+import { useDispatch } from "react-redux";
+import { signOut } from "../../redux/userSlice";
 export const Nav = () => {
-  const { currentUser, logout } = useAuth();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [error, setError] = useState("");
-  const handleLogout = async () => {
-    setError("");
-    try {
-      await logout();
-      navigate("/wyloguj");
-    } catch {
-      setError("Failed to log out");
-    }
+  const { mail, isLogged, isLoading, error } = useUser();
+  const handleLogout = () => {
+    dispatch(signOut());
   };
+  const isFirstEffect = useRef(true);
+  useEffect(() => {
+    console.log(isFirstEffect);
+    console.log(isLogged);
+    if (!isLogged && !isFirstEffect) navigate("/wyloguj");
+    if (!isLogged && isFirstEffect) isFirstEffect.current = false;
+  }, [isLogged, navigate]);
+
   return (
     <nav className="nav">
       <div className="nav__container">
-        {currentUser ? (
-          <ul className="nav__main">
-            {error && <li className="error-popup">{error}</li>}
-            <li className="nav__main__link">Cześć {currentUser}</li>
-            <li className="nav__main__link main-link">
+        {isLogged ? (
+          <div className="nav__main">
+            {error && <div className="error-popup">{error}</div>}
+            <div className="nav__main__link">Cześć {mail}</div>
+            <div className="nav__main__link main-link">
               <Link to="/oddaj-rzeczy">Oddaj rzeczy</Link>
-            </li>
-            <li onClick={handleLogout} className="nav__main__link">
+            </div>
+            <button disabled={isLoading} onClick={handleLogout} className="nav__main__link">
               Wyloguj
-            </li>
-          </ul>
+            </button>
+          </div>
         ) : (
-          <ul className="nav__main">
-            <li className="nav__main__link">
+          <div className="nav__main">
+            <div className="nav__main__link">
               <Link to="/zaloguj">Zaloguj</Link>
-            </li>
-            <li className="nav__main__link main-link">
+            </div>
+            <div className="nav__main__link main-link">
               <Link to="/zarejestruj">Załóż konto</Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         )}
-        <ul className="nav__scroll">
-          <li className="nav__scroll__link">
-            <LinkScroll to="header">Start</LinkScroll>
-          </li>
-          <li className="nav__scroll__link">
-            <LinkScroll to="steps">O co chodzi?</LinkScroll>
-          </li>
-          <li className="nav__scroll__link">
-            <LinkScroll to="about">O nas</LinkScroll>
-          </li>
-          <li className="nav__scroll__link">
-            <LinkScroll to="/">Fundacja i organizacje</LinkScroll>
-          </li>
-          <li className="nav__scroll__link">
-            <LinkScroll to="contact">Kontakt</LinkScroll>
-          </li>
-        </ul>
+        <div className="nav__scroll">
+          <div className="nav__scroll__link">
+            <LinkScroll to="header" offset={-150} smooth>
+              Start
+            </LinkScroll>
+          </div>
+          <div className="nav__scroll__link">
+            <LinkScroll to="steps" offset={-120} smooth>
+              O co chodzi?
+            </LinkScroll>
+          </div>
+          <div className="nav__scroll__link">
+            <LinkScroll to="about" offset={-150} smooth>
+              O nas
+            </LinkScroll>
+          </div>
+          <div className="nav__scroll__link">
+            <LinkScroll to="/" offset={-150} smooth>
+              Fundacja i organizacje
+            </LinkScroll>
+          </div>
+          <div className="nav__scroll__link">
+            <LinkScroll to="contact" offset={-120} smooth>
+              Kontakt
+            </LinkScroll>
+          </div>
+        </div>
       </div>
     </nav>
   );

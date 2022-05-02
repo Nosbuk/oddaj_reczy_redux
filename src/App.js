@@ -1,10 +1,10 @@
 import "./scss/main.scss";
+import React from "react";
 import { Home } from "./components/Home/Home";
 import { Sign } from "./components/Auth/Sign";
 import { Form } from "./components/Form/Form";
 import { Nav } from "./components/Nav/Nav";
 import { Logout } from "./components/Auth/Logout";
-
 import { PrivateRoute } from "./components/Auth/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
