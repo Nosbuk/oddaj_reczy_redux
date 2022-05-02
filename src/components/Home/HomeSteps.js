@@ -7,7 +7,7 @@ import icon4 from "../../assets/Icon-4.svg";
 
 export const HomeSteps = () => {
   return (
-    <section className="steps">
+    <section className="steps" id="steps">
       <div className="steps__header">
         <h4 className="steps__header__text">Wystarczą 4 proste kroki</h4>
         <img src={decoration} alt="" className="decoration" />

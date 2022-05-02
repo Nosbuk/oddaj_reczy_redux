@@ -4,7 +4,7 @@ import decoration from "../../assets/Decoration.svg";
 
 export const HomeHeader = () => {
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="header__container">
         <div className="header__CTA">
           <h4 className="header__CTA__headline">

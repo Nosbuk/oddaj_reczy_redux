@@ -3,6 +3,9 @@
   .button {
     background: #fff;
     display: block;
+    font-size: 38px;
+    font-weight: 300;
+    color: nth($colors, 5);
     width: 310px;
     height: 120px;
     border: 1px solid nth($colors, 5);

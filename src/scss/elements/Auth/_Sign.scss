@@ -1,7 +1,7 @@
 .sign {
   width: 90%;
   max-width: 384px;
-  margin: auto;
+  margin: 160px auto 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -16,6 +16,9 @@
     &__buttons {
       display: flex;
       justify-content: space-between;
+      button {
+        @include button;
+      }
     }
     &__wrapper {
       background: nth($colors, 1);

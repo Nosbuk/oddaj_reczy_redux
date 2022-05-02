@@ -41,19 +41,19 @@ export const Nav = () => {
         )}
         <ul className="nav__scroll">
           <li className="nav__scroll__link">
-            <LinkScroll to="/">Start</LinkScroll>
+            <LinkScroll to="header">Start</LinkScroll>
           </li>
           <li className="nav__scroll__link">
-            <LinkScroll to="/">O co chodzi?</LinkScroll>
+            <LinkScroll to="steps">O co chodzi?</LinkScroll>
           </li>
           <li className="nav__scroll__link">
-            <LinkScroll to="/">O nas</LinkScroll>
+            <LinkScroll to="about">O nas</LinkScroll>
           </li>
           <li className="nav__scroll__link">
             <LinkScroll to="/">Fundacja i organizacje</LinkScroll>
           </li>
           <li className="nav__scroll__link">
-            <LinkScroll to="/">Kontakt</LinkScroll>
+            <LinkScroll to="contact">Kontakt</LinkScroll>
           </li>
         </ul>
       </div>

@@ -4,7 +4,7 @@ import clothImg from "../../assets/Background-Contact-Form.jpg";
 
 export const HomeContact = () => {
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <div className="img-wrapper">
         <img src={clothImg} alt="" className="contact__img" />
         <div className="img-shadow"></div>

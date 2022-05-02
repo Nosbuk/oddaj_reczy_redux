@@ -5,7 +5,7 @@ import peopleImg from "../../assets/People.jpg";
 
 export const HomeAbout = () => {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="about__container">
         <div className="about__box">
           <h4 className="about__box__headline">O nas</h4>
