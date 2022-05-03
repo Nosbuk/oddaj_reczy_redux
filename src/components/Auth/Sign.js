@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useUser } from "../../hooks/useUser";
 import decoration from "../../assets/Decoration.svg";
-import { useDispatch } from "react-redux";
 import { setMail, setPassword, signIn, signUp } from "../../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../redux/userSlice";
 
 export const Sign = () => {
   const dispatch = useDispatch();
-  const { isLoading, error, password, mail, isLogged } = useUser();
+  const { isLoading, error, password, mail, isLogged } = useSelector(selectUser);
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ export const Sign = () => {
   const handlePasswordConfirmChange = () => {};
   useEffect(() => {
     isLogged && navigate("/");
-  }, [isLogged]);
+  }, [isLogged, navigate]);
 
   return (
     <main className="sign">

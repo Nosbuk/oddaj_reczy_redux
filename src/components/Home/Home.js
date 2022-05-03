@@ -4,6 +4,7 @@ import { HomeStats } from "./HomeStats";
 import { HomeSteps } from "./HomeSteps";
 import { HomeAbout } from "./HomeAbout";
 import { HomeContact } from "./HomeContact";
+import { HomePagination } from "./HomePagination";
 export const Home = () => {
   return (
     <div className="home">
@@ -11,6 +12,7 @@ export const Home = () => {
       <HomeStats />
       <HomeSteps />
       <HomeAbout />
+      <HomePagination />
       <HomeContact />
     </div>
   );

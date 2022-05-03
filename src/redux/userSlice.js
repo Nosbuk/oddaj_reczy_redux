@@ -45,7 +45,6 @@ const authSlice = createSlice({
       state.password = action.payload;
     },
     setIsLogged: (state, action) => {
-      console.log(action.payload);
       state.isLogged = action.payload;
     },
   },

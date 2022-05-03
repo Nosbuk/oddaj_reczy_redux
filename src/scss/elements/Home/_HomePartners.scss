@@ -1,0 +1,86 @@
+.partners {
+  @include container;
+  align-items: center;
+  margin: 50px auto;
+  padding: 0 50px;
+  &__title {
+    text-align: center;
+    font: normal normal normal 38px $font-base;
+    color: nth($colors, 5);
+  }
+  &__text {
+    text-align: center;
+    font: normal normal normal 22px/30px $font-base;
+    max-width: 640px;
+    color: nth($colors, 5);
+    margin-bottom: 20px;
+    @media (max-width: 1500px) {
+      font-size: 18px;
+    }
+  }
+  .decoration {
+    margin: 30px 0;
+  }
+  .button {
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    font: normal normal normal 24px/24px $font-base;
+    color: nth($colors, 5);
+    margin-bottom: 50px;
+    border: 0;
+
+    &.active {
+      border: 1px solid nth($colors, 5);
+    }
+  }
+  &__list {
+    width: 100%;
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 35px 0;
+      border-bottom: solid 1px nth($colors, 5);
+
+      &:last-child {
+        border: 0;
+      }
+      .partner {
+        &__title {
+          text-align: left;
+          font: normal normal 300 26px/31px $font-base;
+          color: nth($colors, 5);
+        }
+        &__mission {
+          text-align: left;
+          font: normal normal 300 18px/22px $font-base;
+          color: nth($colors, 5);
+        }
+        &__items {
+          text-align: left;
+          font: normal normal 300 18px/22px $font-base;
+          color: nth($colors, 5);
+        }
+      }
+    }
+  }
+  &__nav {
+    .button {
+      text-align: center;
+      font: normal normal 300 18px/22px $font-base;
+      color: nth($colors, 5);
+      width: 40px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid nth($colors, 5);
+
+      * {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

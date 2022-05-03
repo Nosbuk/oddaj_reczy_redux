@@ -10,5 +10,10 @@
     height: 120px;
     border: 1px solid nth($colors, 5);
     margin: 0 20px;
+    @media (max-width: 1500px) {
+      font-size: 26px;
+      width: 220px;
+      height: 80px;
+    }
   }
 }

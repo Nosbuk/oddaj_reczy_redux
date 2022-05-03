@@ -7,7 +7,14 @@ import { Nav } from "./components/Nav/Nav";
 import { Logout } from "./components/Auth/Logout";
 import { PrivateRoute } from "./components/Auth/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getPartners, selectPartners } from "./redux/partnersSlice";
 function App() {
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector(selectPartners);
+  if (isLoading) {
+    dispatch(getPartners());
+  }
   return (
     <Router>
       <Nav />

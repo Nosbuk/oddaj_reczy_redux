@@ -1,23 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
-import { useUser } from "../../hooks/useUser";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../redux/userSlice";
 import { signOut } from "../../redux/userSlice";
 export const Nav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { mail, isLogged, isLoading, error } = useUser();
+  const { mail, isLogged, isLoading, error } = useSelector(selectUser);
   const handleLogout = () => {
-    dispatch(signOut());
+    dispatch(signOut()).then(!isLogged && navigate("/wyloguj"));
   };
-  const isFirstEffect = useRef(true);
-  useEffect(() => {
-    console.log(isFirstEffect);
-    console.log(isLogged);
-    if (!isLogged && !isFirstEffect) navigate("/wyloguj");
-    if (!isLogged && isFirstEffect) isFirstEffect.current = false;
-  }, [isLogged, navigate]);
 
   return (
     <nav className="nav">
@@ -60,7 +53,7 @@ export const Nav = () => {
             </LinkScroll>
           </div>
           <div className="nav__scroll__link">
-            <LinkScroll to="/" offset={-150} smooth>
+            <LinkScroll to="partners" offset={-150} smooth>
               Fundacja i organizacje
             </LinkScroll>
           </div>

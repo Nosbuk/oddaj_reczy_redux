@@ -2,17 +2,32 @@
   @include container;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin: auto;
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+  }
   &__img {
     width: 100%;
     opacity: 0.35;
     position: relative;
     z-index: 1;
+    @media (max-width: 800px) {
+      opacity: 0.1;
+    }
   }
   .img-wrapper {
     position: relative;
     width: 55%;
     max-width: 1000px;
+    @media (max-width: 800px) {
+      width: 90%;
+      position: absolute;
+      top: -10%;
+      transform: translateX(30px);
+    }
   }
   .img-shadow {
     width: 100%;
@@ -32,22 +47,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 3;
+
     &__headline {
       text-align: center;
       font: normal normal normal 38px $font-base;
       color: nth($colors, 5);
+      @media (max-width: 1500px) {
+        font-size: 30px;
+      }
     }
     .decoration {
       margin: 20px 0px;
     }
     &__row {
       margin-top: 25px;
+      @media (max-width: 1500px) {
+        margin-top: 0;
+      }
       display: flex;
       justify-content: space-between;
       width: 100%;
+      @media (max-width: 1000px) {
+        flex-direction: column;
+      }
+
       .contact__form__label {
         flex-grow: 1;
-        margin: 5px;
+        margin-right: 10px;
+        @media (max-width: 1000px) {
+          margin: 5px 0;
+        }
       }
     }
     &__label {
@@ -63,13 +94,19 @@
       color: nth($colors, 5);
       border-bottom: solid 1px nth($colors, 5);
       margin-top: 20px;
+      @media (max-width: 1500px) {
+        margin-top: 10px;
+      }
+
       &[name="name"] {
         text-transform: capitalize;
       }
     }
     &__msg {
       width: 100%;
+      align-self: stretch;
       border-bottom: solid 1px nth($colors, 5);
+      min-height: 100px;
     }
     &__submit {
       @include button;

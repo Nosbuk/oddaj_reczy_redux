@@ -8,8 +8,14 @@
     @include container;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+    }
   }
   &__box {
+    position: relative;
     .decoration {
       margin: 20px 0;
     }
@@ -22,24 +28,54 @@
       text-align: center;
       font: normal normal normal 38px $font-base;
       color: nth($colors, 5);
+      @media (max-width: 800px) {
+        margin-top: 30px;
+      }
     }
     &__text {
       text-align: center;
-      font: normal normal normal 30px/54px $font-base;
+      font: normal normal normal 30px/170% $font-base;
       color: nth($colors, 5);
       max-width: 656px;
       margin-bottom: 30px;
-      position: relative;
+      @media (max-width: 1500px) {
+        font-size: 20px;
+        padding: 0 20px;
+      }
+      @media (max-width: 1000px) {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+      @media (max-width: 800px) {
+        padding-bottom: 80px;
+      }
     }
     &__signature {
       position: absolute;
-      bottom: -100px;
-      width: 25%;
-      min-width: 150px;
+      bottom: 10%;
+      right: 10%;
+      width: 30%;
+      min-width: 100px;
+      max-width: 200px;
+      @media (max-width: 1500px) {
+        bottom: 30px;
+        right: 30px;
+        width: 25%;
+      }
+      @media (max-width: 800px) {
+        width: 100px;
+      }
     }
   }
   &__img {
     max-width: 940px;
     width: 50%;
+    @media (max-width: 800px) {
+      transform: rotate(270deg);
+      width: 80%;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 }

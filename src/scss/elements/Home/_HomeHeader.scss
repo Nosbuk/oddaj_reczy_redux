@@ -1,6 +1,6 @@
 .header {
   height: 800px;
-  margin-top: 80px;
+  margin-top: 112px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,10 +14,18 @@
   @media (min-width: 2000px) {
     background-position: calc(50% - 500px) 100%;
   }
+  @media (max-width: 1500px) {
+    background-position: center 290px;
+    height: auto;
+  }
 
   &__container {
     @include container;
     align-items: flex-end;
+    @media (max-width: 1500px) {
+      align-items: center;
+      padding-bottom: 150px;
+    }
   }
 
   &__CTA {
@@ -30,6 +38,12 @@
     padding-left: 150px;
     background: rgb(255, 255, 255);
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 100%);
+    @media (max-width: 1500px) {
+      width: 100%;
+      padding: 30px 50px 300px 30px;
+      margin-top: 30px;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 20%, rgba(255, 255, 255, 1) 100%);
+    }
 
     &__headline {
       text-align: center;
@@ -37,6 +51,9 @@
       letter-spacing: -0.76px;
       color: nth($colors, 5);
       margin-bottom: 25px;
+      @media (max-width: 1500px) {
+        font-size: 30px;
+      }
     }
   }
   .buttons-row {

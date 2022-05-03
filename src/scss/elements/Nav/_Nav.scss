@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   top: 0;
   padding-bottom: 20px;
   background: #ffffffcc;
@@ -16,6 +16,10 @@
   &__main {
     display: flex;
     margin: 15px 20px;
+    @media (max-width: 1500px) {
+      margin: 10px 20px;
+    }
+
     &__link {
       cursor: pointer;
       padding: 10px;
@@ -25,6 +29,10 @@
       justify-content: center;
       font: normal normal normal 20px $font-base;
       color: nth($colors, 4);
+      @media (max-width: 1500px) {
+        font-size: 16px;
+      }
+
       &.main-link {
         border: 1px solid nth($colors, 3);
       }
@@ -37,6 +45,9 @@
       margin: 0 30px;
       font: normal normal normal 24px $font-base;
       color: #3c3c3c;
+      @media (max-width: 1500px) {
+        font-size: 18px;
+      }
     }
   }
 }
