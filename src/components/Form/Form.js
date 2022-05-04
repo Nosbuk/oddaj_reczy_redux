@@ -1,5 +1,10 @@
 import React from "react";
+import { FormMultiform } from "./FormMultiform";
 
 export const Form = () => {
-  return <div>Form</div>;
+  return (
+    <main className="form__container">
+      <FormMultiform />
+    </main>
+  );
 };
