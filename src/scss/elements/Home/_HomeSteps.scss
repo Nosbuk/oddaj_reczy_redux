@@ -16,6 +16,9 @@
       text-align: center;
       font: normal normal normal 38px $font-base;
       color: nth($colors, 5);
+      @media (max-width: 700px) {
+        font-size: 25px;
+      }
     }
   }
   &__wrapper {
@@ -40,6 +43,9 @@
       align-items: center;
       flex-wrap: wrap;
       max-width: 500px;
+    }
+    @media (max-width: 500px) {
+      flex-direction: column;
     }
   }
   &__box {

@@ -9,7 +9,7 @@ export const HomeHeader = () => {
         <div className="header__CTA">
           <h4 className="header__CTA__headline">
             Zacznij pomagać!
-            <br /> Oddaj niechciane rzeczy w zaufane ręce
+            <br /> Oddaj niechciane rzeczy w&nbsp;zaufane ręce
           </h4>
           <img className="decoration" src={decoration} alt="" />
           <div className="buttons-row">

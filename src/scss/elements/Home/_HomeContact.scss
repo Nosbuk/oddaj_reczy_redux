@@ -23,10 +23,7 @@
     width: 55%;
     max-width: 1000px;
     @media (max-width: 800px) {
-      width: 90%;
-      position: absolute;
-      top: -10%;
-      transform: translateX(30px);
+      width: 100%;
     }
   }
   .img-shadow {
@@ -36,7 +33,6 @@
     opacity: 1;
     position: absolute;
     top: 0;
-    left: 0;
     box-shadow: inset 0px 0px 30px 30px rgba(255, 255, 255, 1);
   }
   &__form {
@@ -49,6 +45,11 @@
     justify-content: center;
     position: relative;
     z-index: 3;
+    @media (max-width: 800px) {
+      align-items: center;
+      padding: 0 10px;
+      width: 95%;
+    }
 
     &__headline {
       text-align: center;
@@ -72,6 +73,9 @@
       @media (max-width: 1000px) {
         flex-direction: column;
       }
+      @media (max-width: 800px) {
+        align-items: center;
+      }
 
       .contact__form__label {
         flex-grow: 1;
@@ -88,6 +92,9 @@
       color: nth($colors, 5);
       align-self: flex-start;
       margin: 20px 0;
+      @media (max-width: 800px) {
+        width: 100%;
+      }
     }
     &__input {
       font: normal normal normal 18px $font-base;

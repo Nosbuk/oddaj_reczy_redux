@@ -15,5 +15,10 @@
       width: 220px;
       height: 80px;
     }
+    @media (max-width: 700px) {
+      font-size: 2opx;
+      width: 200px;
+      height: 80px;
+    }
   }
 }

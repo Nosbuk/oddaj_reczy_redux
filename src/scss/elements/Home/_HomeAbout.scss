@@ -13,6 +13,9 @@
       align-items: center;
       padding-bottom: 20px;
     }
+    @media (max-width: 500px) {
+      padding-bottom: 0;
+    }
   }
   &__box {
     position: relative;
@@ -30,6 +33,9 @@
       color: nth($colors, 5);
       @media (max-width: 800px) {
         margin-top: 30px;
+      }
+      @media (max-width: 700px) {
+        font-size: 25px;
       }
     }
     &__text {
