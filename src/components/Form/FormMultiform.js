@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export const FormMultiform = () => {
-  const [step, setStep] = useState();
+  const [step, setStep] = useState(1);
   const { register, handleSubmit } = useForm();
 
   const submitHandler = (data) => {
+    setStep(step + 1);
     console.log(data);
     console.log(
       Object.values(data)
         .filter((item) => item)
         .join(" ")
     );
+  };
+  const backHandler = () => {
+    if (step > 1) setStep(step - 1);
   };
   return (
     <section className="multiform">
@@ -64,6 +68,7 @@ export const FormMultiform = () => {
             <input {...register("five")} type="checkbox" className="multiform__form__checkbox" value="Inne" />
             Inne
           </label>
+          <button onClick={backHandler}>Wstecz</button>
           <input type="submit" value="Dalej" />
         </form>
       )}
