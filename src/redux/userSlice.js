@@ -22,6 +22,7 @@ export const signIn = createAsyncThunk("user/signIn", async ({ mail, password },
   try {
     await signInWithEmailAndPassword(auth, mail, password);
   } catch (err) {
+    console.log(err);
     return rejectWithValue(err.code);
   }
 });
@@ -58,7 +59,7 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(signUp.rejected, (state, action) => {
-        state.error = action.payload.code;
+        state.error = action.payload;
         state.isLoading = false;
       })
       .addCase(signIn.pending, (state) => {
@@ -69,7 +70,7 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(signIn.rejected, (state, action) => {
-        state.error = action.payload.code;
+        state.error = action.payload;
         state.isLoading = false;
       })
       .addCase(signOut.pending, (state) => {

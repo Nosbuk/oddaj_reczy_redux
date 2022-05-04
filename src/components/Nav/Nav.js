@@ -10,7 +10,7 @@ export const Nav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [burger, setBurger] = useState(false);
-  const { mail, isLogged, isLoading, error } = useSelector(selectUser);
+  const { mail, isLogged, isLoading } = useSelector(selectUser);
   const { pathname } = useLocation();
   const handleLogout = () => {
     dispatch(signOut()).then(navigate("/wyloguj"));
@@ -25,8 +25,6 @@ export const Nav = () => {
     <nav className="nav">
       <div className="nav__container">
         <div className="nav__main">
-          {error && <div className="error-popup">{error}</div>}
-
           {isLogged ? (
             <>
               <div className="nav__main__link">Cześć {mail}</div>

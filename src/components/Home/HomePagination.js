@@ -25,13 +25,13 @@ export const HomePagination = () => {
       <img src={decoration} alt="" className="decoration" />
 
       <div className="partners__buttons buttons-row">
-        <button onClick={(event) => handleClick("Fundacja", event)} className={"button" + (partnersType === "Fundacja" ? " active" : "")}>
+        <button onClick={(event) => handleClick("Fundacja")} className={"button" + (partnersType === "Fundacja" ? " active" : "")}>
           Fundacjom
         </button>
-        <button onClick={(event) => handleClick("Organizacja", event)} className={"button" + (partnersType === "Organizacja" ? " active" : "")}>
+        <button onClick={(event) => handleClick("Organizacja")} className={"button" + (partnersType === "Organizacja" ? " active" : "")}>
           Organizacjom
         </button>
-        <button onClick={(event) => handleClick("Zbiórka", event)} className={"button" + (partnersType === "Zbiórka" ? " active" : "")}>
+        <button onClick={(event) => handleClick("Zbiórka")} className={"button" + (partnersType === "Zbiórka" ? " active" : "")}>
           Lokalnym
           <br />
           zbiórkom
@@ -40,7 +40,7 @@ export const HomePagination = () => {
       <p className="partners__text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
 
       <Partners partners={partnersToShow} partnersType={partnersType} loading={isLoading} />
-      <Pagination partnersPerPage={partnersPerPage} totalPartners={partners.length} paginate={paginate} />
+      <Pagination currentPage={currentPage} partnersPerPage={partnersPerPage} totalPartners={partners.length} paginate={paginate} />
     </div>
   );
 };
