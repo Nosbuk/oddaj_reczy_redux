@@ -15,7 +15,7 @@ export const HomePagination = () => {
   const indexOfFirstPartner = indexOfLastPartner - partnersPerPage;
   const partnersToShow = partners.slice(indexOfFirstPartner, indexOfLastPartner);
 
-  const handleClick = (newPartnersType, event) => {
+  const handleClick = (newPartnersType) => {
     partnersType !== newPartnersType && setPartnersType(newPartnersType);
   };
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -25,13 +25,13 @@ export const HomePagination = () => {
       <img src={decoration} alt="" className="decoration" />
 
       <div className="partners__buttons buttons-row">
-        <button onClick={(event) => handleClick("Fundacja")} className={"button" + (partnersType === "Fundacja" ? " active" : "")}>
+        <button onClick={() => handleClick("Fundacja")} className={"button" + (partnersType === "Fundacja" ? " active" : "")}>
           Fundacjom
         </button>
-        <button onClick={(event) => handleClick("Organizacja")} className={"button" + (partnersType === "Organizacja" ? " active" : "")}>
+        <button onClick={() => handleClick("Organizacja")} className={"button" + (partnersType === "Organizacja" ? " active" : "")}>
           Organizacjom
         </button>
-        <button onClick={(event) => handleClick("Zbiórka")} className={"button" + (partnersType === "Zbiórka" ? " active" : "")}>
+        <button onClick={() => handleClick("Zbiórka")} className={"button" + (partnersType === "Zbiórka" ? " active" : "")}>
           Lokalnym
           <br />
           zbiórkom

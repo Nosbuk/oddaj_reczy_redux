@@ -32,7 +32,7 @@ export const HomeContact = () => {
         <div className="img-shadow"></div>
       </div>
       <form className="contact__form" onSubmit={handleSubmit(submitHandler)}>
-        <h4 className="contact__form__headline">Skontaktuj sie z nami</h4>
+        <h4 className="contact__form__headline">Skontaktuj sie z&nbsp;nami</h4>
         <img src={decoration} alt="" className="decoration" />
         <div className="contact__form__row">
           <label htmlFor="name" className="contact__form__label">
